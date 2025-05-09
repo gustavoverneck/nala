@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Página Inicial</title>
+    <title>DOM Assessoria Empresarial</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    {% include 'icon.html' %}
 </head>
 <body>
 
@@ -12,9 +13,35 @@
     {% include 'header.html' %}
 
     <div class="content">
-        <h1>Bem-vindo à Página Inicial</h1>
-        <p>Este é um conteúdo de teste para a página inicial.</p>
-    </div>
+        <div class="intro-section">
+        <div class="intro-text">
+            <h1>Bem-vindo(a) à DOM Assessoria Empresarial</h1>
+            <p>Somos especialistas em contabilidade e consultoria empresarial. Aqui, você encontra soluções inteligentes para a gestão financeira e fiscal do seu negócio, com transparência, agilidade e confiança.</p>
+        </div>
+        <div class="intro-image">
+            <img src="static/images/dom_index.jpg" alt="Imagem de contabilidade profissional">
+        </div>
+        </div>
+        
+        <div class="three-columns"> 
+            <div class="column">
+                <h2>Serviços Contábeis</h2>
+                <p>Oferecemos contabilidade completa para empresas de todos os portes, incluindo escrituração fiscal, balanços patrimoniais e apuração de impostos com segurança e precisão.</p>
+            </div>
+            <div class="column">
+                <h2>Consultoria Empresarial</h2>
+                <p>Ajudamos sua empresa a tomar decisões estratégicas com base em dados contábeis, análises financeiras e planejamento tributário personalizado.</p>
+            </div>
+            <div class="column">
+                <h2>Legalização de Empresas</h2>
+                <p>Atuamos na abertura, regularização e encerramento de empresas com agilidade, orientando você em todas as etapas junto aos órgãos públicos.</p>
+            </div>
+        </div>
+
+        <a class="cta-section" id="contact-section" href="https://wa.me/message/BDWQ47Y37DAEM1" target="_blank">
+            <h2>Entre em contato conosco!</h2>
+            <p>Estamos aqui para atender suas necessidades. Clique aqui e fale diretamente conosco pelo WhatsApp.</p>
+        </a>
 
     <!-- Footer -->
     {% include 'footer.html' %}

@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Contato</title>
+        <title>DOM - Contato</title>
         <link rel="stylesheet" href="/static/css/style.css">
+        {% include 'icon.html' %}
     </head>
 <body>
     
@@ -12,7 +13,7 @@
     {% include 'header.html' %}
 
     <main>
-        <div class="form-container">
+        <div class="contact-form-container">
             <form action="{{ url_for('main.send_message') }}" method="POST">
                 <label for="name">Nome:</label><br>
                 <input type="text" id="name" name="name" required><br><br>

@@ -1,18 +1,45 @@
 /* Geral */
+:root {
+  --primary-color: #0D1F4A;
+  --secondary-color: #F4B22C;
+  --accent-color: #888180;
+  --background-color: #F5F7FA;
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-secondary: 'Roboto', Arial, sans-serif;
+  --font-accent: 'Courier New', Courier, monospace;
+  --border-color: #ccc; /* Added for borders */
+  --box-shadow-color: rgba(0, 0, 0, 0.2); /* Added for shadows */
+    
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px - corpo de texto */
+  --font-size-md: 1.125rem;  /* 18px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px - subtítulo */
+  --font-size-xxl: 2rem;     /* 32px - títulos */
+  --font-size-xxxl: 2.5rem;  /* 40px - destaque principal */
+  --font-size-xxxxl: 3rem;   /* 48px - destaque maior */
+  --font-size-xxxxxl: 4rem;  /* 64px - destaque máximo */
+}
+
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  max-width: 1200px; /* Define a largura máxima */
+  box-sizing: border-box; /* Inclui padding e border no tamanho total */
 }
 
 /* Header */
 header.main-header {
-  background-color: #333;
+  background-color: var(--primary-color);
   color: white;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between; /* Espaço entre logo e navbar */
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   width: 100%;
@@ -20,66 +47,69 @@ header.main-header {
   left: 0;
   z-index: 1000;
   box-sizing: border-box;
-  overflow: hidden; /* Evita que a navbar vaze */
+  overflow: hidden;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
 }
 
-/* Logo */
 header .logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Garante que o logo ficará à esquerda */
+  justify-content: flex-start;
 }
 
 header .logo-img {
-  height: 40px; /* Tamanho do logo */
+  height: 40px;
   margin-right: 10px;
 }
 
 header .logo span {
   font-size: 1.5rem;
   font-weight: bold;
+  font-family: var(--font-secondary);
 }
 
 /* Navegação */
 nav.nav-bar {
-  display: flex; /* Flexbox para deixar os links lado a lado */
+  display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Permite que os itens da navbar quebrem em várias linhas se não houver espaço */
-  justify-content: flex-end; /* Alinha os links à direita */
-  gap: 1.5rem; /* Espaçamento entre os links */
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
 
 nav.nav-bar a {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-secondary);
   transition: color 0.3s;
 }
 
 nav.nav-bar a:hover {
-  color: #007bff; /* Cor para o efeito hover */
+  color: var(--secondary-color);
 }
 
-/* Adiciona espaçamento ao conteúdo da página (evita sobreposição com o header fixo) */
 body {
-  padding-top: 80px; /* Ajuste para que o conteúdo não fique por baixo do header */
+  padding-top: 80px;
 }
 
 /* Formulário de login */
 .login-container {
   background-color: white;
   padding: 2rem 3rem;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px var(--box-shadow-color);
   width: 100%;
   max-width: 400px;
   box-sizing: border-box;
-  margin: 2rem auto;
+  margin: 3rem auto;
+  font-family: var(--font-primary);
 }
 
 .login-container h2 {
   text-align: center;
   margin-bottom: 1.5rem;
+  font-family: var(--font-secondary);
 }
 
 form {
@@ -88,40 +118,46 @@ form {
 }
 
 label {
-  margin: 0.5rem 0 0.25rem;
+  margin: 0.5rem 0 0.5rem;
   font-weight: bold;
+  font-family: var(--font-secondary);
 }
 
 input {
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  font-family: var(--font-primary);
 }
 
 button {
-  padding: 0.75rem;
-  background-color: #007bff;
+  padding: 1rem;
+  background-color: var(--secondary-color);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  font-family: var(--font-secondary);
   transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-color);
 }
 
 .footer-container {
-  background-color: #f8f9fa;
+  background-color: var(--background-color);
   padding: 20px;
   text-align: center;
-  border-top: 1px solid #e9ecef;
-  /* position: fixed; */
+  border-top: 1px solid var(--accent-color);
   width: 100%;
   bottom: 0;
+  font-family: var(--font-primary);
+  margin-top: 40px;
 }
+
 .footer-links {
   list-style: none;
   padding: 0;
@@ -129,29 +165,162 @@ button:hover {
   display: inline-flex;
   gap: 15px;
 }
+
 .footer-links li {
   display: inline;
 }
+
 .footer-links a {
   text-decoration: none;
-  color: #007bff;
+  color: var(--secondary-color);
+  font-family: var(--font-secondary);
 }
+
 .footer-links a:hover {
   text-decoration: underline;
 }
 
-.form-container {
+.contact-form-container {
   background-color: white;
-  padding: 2rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px var(--box-shadow-color);
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
+  font-family: var(--font-primary);
+  padding: 2rem;
+  line-height: 0.5;
 }
 
-.form-container h2 {
+.three-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.three-columns > * {
+  margin: 2rem 0;
+  flex: 1;
+  max-width: 33.33%;
+  box-sizing: border-box;
+}
+
+.column {
+  border: 1px solid var(--border-color);
+  padding: 1rem 0.75rem; /* 0.5rem for vertical, 1rem for lateral */
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 15px var(--box-shadow-color);
+
+  h2 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xxxl);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+    line-height: 1.4;
+  }
+}
+
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.intro-text {
+  flex: 1;
+  h1 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xxl);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+    line-height: 1.6;
+    text-align: justify;
+  }
+}
+
+.intro-image {
+  flex: 1;
   text-align: center;
+}
+
+.intro-image img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px --box-shadow-color;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+ul.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+ul.social-links li {
+  margin-bottom: 10px; /* Espaçamento entre ícones */
+}
+
+.cta-section {
+  display: block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  margin: 3rem auto;
+  box-shadow: 0 8px 20px var(--box-shadow-color);
+  max-width: 800px;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove o sublinhado padrão de links */
+}
+
+.cta-section:hover {
+  background-color: var(--accent-color);
+}
+.cta-section h2 {
+  font-size: var(--font-size-xxl);
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+}
+
+.cta-section p {
+  font-size: var(--font-size-xl);
   margin-bottom: 1.5rem;
+  font-family: var(--font-secondary);
+}
+
+.cta-section a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cta-section a:hover {
+  color: inherit; /* Ensures text color doesn't change on hover */
 }
