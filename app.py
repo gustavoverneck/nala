@@ -19,9 +19,9 @@ if __name__ == '__main__':
     # Initialize SQLite database
     initialize_database()
     user = User(
-        name="Guilherme de Melo", 
-        email="guilherme@clarissa.com",
-        password="OGuilhermeelindo10",
+        name=" ", 
+        email=" ",
+        password=" ",
         role="user" # admin, user, etc.
     )
     #add_user_to_user_table(user)
