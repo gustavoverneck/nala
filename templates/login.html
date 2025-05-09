@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    {% include 'header.html' %}
+    
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="{{ url_for('main.login') }}" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+    {% if show_popup %}
+    <script>
+        alert("{{ error }}");
+    </script>
+    {% endif %}
+</html>
