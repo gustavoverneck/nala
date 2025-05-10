@@ -153,9 +153,11 @@ button:hover {
   text-align: center;
   border-top: 1px solid var(--accent-color);
   width: 100%;
+  max-width: 1200px;
   bottom: 0;
   font-family: var(--font-primary);
   margin-top: 40px;
+  box-sizing: border-box;
 }
 
 .footer-links {
@@ -241,7 +243,7 @@ button:hover {
   flex: 1;
   h1 {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-xxl);
+    font-size: var(--font-size-xxxl);
     color: var(--primary-color);
     margin-bottom: 1rem;
   }
@@ -323,4 +325,111 @@ ul.social-links li {
 
 .cta-section a:hover {
   color: inherit; /* Ensures text color doesn't change on hover */
+}
+
+
+/* Responsividade para tablets */
+@media (max-width: 992px) {
+  .three-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .three-columns > * {
+    max-width: 100%;
+  }
+
+  .intro-section {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .intro-image img {
+    max-width: 80%; /* Increased from 60% to 80% */
+  }
+
+  .intro-text h1,
+  .cta-section h2 {
+    font-size: var(--font-size-xxl);
+  }
+
+  .intro-text p,
+  .cta-section p {
+    font-size: var(--font-size-lg);
+  }
+  
+  /* Proportional login container size for tablets */
+  .login-container {
+    max-width: 60%;
+    padding: 2.5rem 3.5rem;
+    margin: 4rem auto;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem 2rem;
+    padding-top: 40%;
+  }
+
+  header.main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav.nav-bar {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  nav.nav-bar a {
+    font-size: var(--font-size-md);
+    padding: 0.5rem;
+    flex-grow: 0;
+    text-align: center;
+  }
+
+  .intro-image img {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  /* Proportional login container for mobile */
+  .login-container {
+    max-width: 90%;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    font-size: var(--font-size-md);
+  }
+
+  .login-container input {
+    padding: 0.75rem;
+    font-size: var(--font-size-md);
+  }
+
+  .login-container button {
+    padding: 1.2rem;
+    font-size: var(--font-size-md);
+  }
+
+  .contact-form-container,
+  .cta-section {
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+  }
 }

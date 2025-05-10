@@ -26,4 +26,4 @@ if __name__ == '__main__':
     )
     #add_user_to_user_table(user)
     app = create_app()
-    app.run(debug=True, port=8080)
+    app.run(debug=True, port=3000)
