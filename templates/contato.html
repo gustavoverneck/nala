@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>DOM - Contato</title>
-        <link rel="stylesheet" href="/static/css/style.css">
-        {% include 'icon.html' %}
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>DOM - Contato</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    {% include 'icon.html' %}
+</head>
 <body>
     
     <!-- Header -->
     {% include 'header.html' %}
 
-    <main>
-        <div class="contact-form-container">
-            <form action="{{ url_for('main.send_message') }}" method="POST">
-                <label for="name">Nome:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                
-                <label for="message">Mensagem:</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea><br><br>
-                
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </main>
-
+    <div class="login-container">
+        <h2>Contato</h2>
+        <form action="{{ url_for('main.send_message') }}" method="POST">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    
     <!-- Footer -->
     {% include 'footer.html' %}
+
 </body>
 </html>

@@ -4,6 +4,7 @@
   --secondary-color: #F4B22C;
   --accent-color: #888180;
   --background-color: #F5F7FA;
+  --contact-button-color: #5bb053;
   --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --font-secondary: 'Roboto', Arial, sans-serif;
   --font-accent: 'Courier New', Courier, monospace;
@@ -22,6 +23,10 @@
   --font-size-xxxxxl: 4rem;  /* 64px - destaque máximo */
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0 auto;
   padding: 0;
@@ -29,8 +34,20 @@ body {
   font-size: var(--font-size-lg);
   background-color: var(--background-color);
   color: var(--primary-color);
-  max-width: 1200px; /* Define a largura máxima */
   box-sizing: border-box; /* Inclui padding e border no tamanho total */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+main {
+  flex: 1;
 }
 
 /* Header */
@@ -96,19 +113,20 @@ body {
 /* Formulário de login */
 .login-container {
   background-color: white;
-  padding: 2rem 3rem;
+  padding: 3rem 3rem;
   border-radius: 10px;
   box-shadow: 0 8px 20px var(--box-shadow-color);
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   box-sizing: border-box;
   margin: 3rem auto;
   font-family: var(--font-primary);
+  line-height: 1.6; /* Added line spacing */
+  border-top: 3px solid var(--secondary-color);
 }
 
 .login-container h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
   font-family: var(--font-secondary);
 }
 
@@ -118,7 +136,7 @@ form {
 }
 
 label {
-  margin: 0.5rem 0 0.5rem;
+  margin: 0rem 0 0rem;
   font-weight: bold;
   font-family: var(--font-secondary);
 }
@@ -148,16 +166,16 @@ button:hover {
 }
 
 .footer-container {
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
+  color: white;
   padding: 20px;
   text-align: center;
-  border-top: 1px solid var(--accent-color);
   width: 100%;
-  max-width: 1200px;
-  bottom: 0;
-  font-family: var(--font-primary);
-  margin-top: 40px;
+  position: relative;
   box-sizing: border-box;
+  margin-top: auto;
+  box-shadow: 0 -4px 10px var(--box-shadow-color);
+  font-family: var(--font-primary);
 }
 
 .footer-links {
@@ -211,24 +229,28 @@ button:hover {
 
 .column {
   border: 1px solid var(--border-color);
-  padding: 1rem 0.75rem; /* 0.5rem for vertical, 1rem for lateral */
+  padding: 1rem 3rem;
   border-radius: 10px;
   background-color: var(--secondary-color);
   box-shadow: 0 4px 15px var(--box-shadow-color);
 
   h2 {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-xxxl);
+    font-size: var(--font-size-xxl);
     color: var(--primary-color);
     margin-bottom: 2rem;
   }
 
   p {
-    font-family: var(--font-secondary);
-    font-size: var(--font-size-xl);
-    color: var(--primary-color);
-    line-height: 1.4;
-  }
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+  line-height: 1.6;
+  max-width: 70ch;
+  margin-bottom: 1.2em;
+  text-align: justify;
+  hyphens: auto;
+}
 }
 
 .intro-section {
@@ -303,7 +325,7 @@ ul.social-links li {
 }
 
 .cta-section:hover {
-  background-color: var(--accent-color);
+  background-color: var(--contact-button-color);
 }
 .cta-section h2 {
   font-size: var(--font-size-xxl);
@@ -328,7 +350,7 @@ ul.social-links li {
 }
 
 
-/* Responsividade para tablets */
+/* Tablet optimization */
 @media (max-width: 992px) {
   .three-columns {
     flex-direction: column;
@@ -415,12 +437,6 @@ ul.social-links li {
   .login-container button {
     padding: 1.2rem;
     font-size: var(--font-size-md);
-  }
-
-  .contact-form-container,
-  .cta-section {
-    padding: 1rem;
-    margin: 2rem auto;
   }
 
   .footer-links {
