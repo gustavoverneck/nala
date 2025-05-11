@@ -6,6 +6,9 @@ from .login import verify_user
 from .token import generate_session_token
 from .user import User
 from .db import get_user_by_email
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 main = Blueprint('main', __name__)
 
@@ -46,7 +49,54 @@ def contato():
 
 @main.route('/send_message', methods=['POST'])
 def send_message():
-    pass
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        message = request.form.get('message')
+        
+        # Send email notification
+        
+        # Email configuration
+        sender_email = os.environ.get('CONTACT_EMAIL', '')
+        receiver_email = os.environ.get('NOTIFICATION_EMAIL', '')
+        password = os.environ.get('EMAIL_PASSWORD', '')
+        
+        # Create message
+        msg = MIMEMultipart()
+        msg['From'] = sender_email
+        msg['To'] = receiver_email
+        msg['Subject'] = f"Contato site DOM - Nova Mensagem de {name}"
+        
+        body = f"""
+        Você recebeu uma nova mensagem do formulário de contato do site DOM Assessoria Empresarial:
+        
+        Nome: {name}
+        Email: {email}
+        
+        Mensagem:
+        {message}
+        """
+        
+        msg.attach(MIMEText(body, 'plain'))
+        
+        try:
+            # Connect to SMTP server
+            server = smtplib.SMTP('smtp.gmail.com', 587)  # Adjust server settings as needed
+            server.starttls()
+            server.login(sender_email, password)
+            text = msg.as_string()
+            server.sendmail(sender_email, receiver_email, text)
+            server.quit()
+            print("Email notification sent successfully")
+        except Exception as e:
+            print(f"Failed to send email notification: {e}")
+        
+        # For now, just return a success message
+        return render_template('contato.html', success_message="Mensagem enviada com sucesso! Entraremos em contato em breve.")
+    
+    # This should not happen as the route only accepts POST
+    return redirect(url_for('main.contato'))
+
 
 @main.route('/logout')
 def logout():
