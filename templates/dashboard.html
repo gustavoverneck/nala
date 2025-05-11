@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>DOM - Dashboard</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
     {% include 'icon.html' %}
 </head>
 
 <body>
 
     <!-- Header -->
-    <header class="main-header">
-        <div class="logo">
-            <!-- <img src="/static/logo.png" alt="Logo da Empresa" class="logo-img"> Logo Placeholder -->
-            <span>Minha Empresa</span> <!-- Nome da Empresa -->
-        </div>
-        <nav class="nav-bar">
-            <a href="/">Início</a>
-            <a href="/login">Login</a>
-            <a href="/sobre">Sobre</a>
-            <a href="/contato">Contato</a>
-            <a href="/logout">Logout</a>
-        </nav>
-    </header>
-    
-    <h1>Olá, {{ user_info['name'] }}!</h1>
+    {% include 'dashboard_header.html' %}
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+        <ul class="menu">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Usuários</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Mensagens</a></li>
+        </ul>
+        </aside>
+
+        <main class="dashboard-content">
+        <h1>Bem-vindo ao Painel de Controle</h1>
+        <p>Este é o seu espaço de gestão. Escolha uma opção no menu.</p>
+        <!-- Adicione widgets ou cards aqui -->
+        </main>
+    </div>
 
     <!-- Footer -->
     {% include 'footer.html' %}

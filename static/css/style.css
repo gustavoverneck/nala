@@ -13,14 +13,14 @@
     
   --font-size-xs: 0.75rem;   /* 12px */
   --font-size-sm: 0.875rem;  /* 14px */
-  --font-size-base: 1rem;    /* 16px - corpo de texto */
+  --font-size-base: 1rem;    /* 16px */
   --font-size-md: 1.125rem;  /* 18px */
   --font-size-lg: 1.25rem;   /* 20px */
-  --font-size-xl: 1.5rem;    /* 24px - subtítulo */
-  --font-size-xxl: 2rem;     /* 32px - títulos */
-  --font-size-xxxl: 2.5rem;  /* 40px - destaque principal */
-  --font-size-xxxxl: 3rem;   /* 48px - destaque maior */
-  --font-size-xxxxxl: 4rem;  /* 64px - destaque máximo */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-xxl: 2rem;     /* 32px */
+  --font-size-xxxl: 2.5rem;  /* 40px */
+  --font-size-xxxxl: 3rem;   /* 48px */
+  --font-size-xxxxxl: 4rem;  /* 64px */
 }
 
 html, body {
@@ -41,8 +41,9 @@ body {
 
 .content {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0rem;
   flex: 1;
 }
 
@@ -112,17 +113,17 @@ body {
 
 /* Formulário de login */
 .login-container {
+  max-width: 450px;
+  width: 100%;
+  margin: 3rem auto;
+  padding: 3rem;
   background-color: white;
-  padding: 3rem 3rem;
   border-radius: 10px;
   box-shadow: 0 8px 20px var(--box-shadow-color);
-  width: 100%;
-  max-width: 450px;
-  box-sizing: border-box;
-  margin: 3rem auto;
-  font-family: var(--font-primary);
-  line-height: 1.6; /* Added line spacing */
   border-top: 3px solid var(--secondary-color);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  box-sizing: border-box;
 }
 
 .login-container h2 {
@@ -346,7 +347,7 @@ ul.social-links li {
 }
 
 .cta-section a:hover {
-  color: inherit; /* Ensures text color doesn't change on hover */
+  color: inherit;
 }
 
 
@@ -368,7 +369,7 @@ ul.social-links li {
   }
 
   .intro-image img {
-    max-width: 80%; /* Increased from 60% to 80% */
+    max-width: 80%;
   }
 
   .intro-text h1,
@@ -381,14 +382,13 @@ ul.social-links li {
     font-size: var(--font-size-lg);
   }
   
-  /* Proportional login container size for tablets */
   .login-container {
     max-width: 60%;
     padding: 2.5rem 3.5rem;
     margin: 4rem auto;
   }
+  
 }
-
 /* Responsividade para celulares */
 @media (max-width: 600px) {
   body {
@@ -448,4 +448,5 @@ ul.social-links li {
     width: 32px;
     height: 32px;
   }
+
 }
