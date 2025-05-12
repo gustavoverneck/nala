@@ -1,2 +1,2 @@
 # nala
-Um sistema de controle e automação de contabilidade
+Aplicação Web para contabilidade
