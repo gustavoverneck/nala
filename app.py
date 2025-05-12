@@ -21,44 +21,7 @@ def create_app():
     
     return app
     
+app = create_app()
 if __name__ == '__main__':
-    # Development
-    # Initialize SQLite database
-    # initialize_database()
-    # user = User(
-    #     name="Administrador", 
-    #     email="admin@admin.com",
-    #     password="admin",
-    #     role="admin" # admin, user, etc.
-    # )
-    # add_user_to_user_table(user)
-    
-    # # Print users from database
-    # conn = get_database_connection()
-    # cursor = conn.cursor()
-    # cursor.execute("SELECT * FROM users")
-    # users = cursor.fetchall()
-    # print("Users in database:")
-    # for user in users:
-    #     print(user)
-    # conn.close()
-
-    # # Start app    
-    # app = create_app()
-    # app.run(debug=True, host=os.getenv("LOCAL_IP"), port=3000)
-
-    # # # Production    
-    # port = os.getenv("PORT")
-    # threads = os.getenv("WAITRESS_THREADS", "4")
-    
-    # # Create the Flask application
-    # application = create_app()
-    
-    # # Run with waitress
-    # print(f"Starting waitress server on port {port} with {threads} threads")
-    # serve(application, host='0.0.0.0', port=int(port), threads=int(threads))
-    # print("Ending server connection.")
-    
     # Render
-    app = create_app()
     app.run(debug=False)
