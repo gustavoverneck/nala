@@ -18,9 +18,10 @@ def create_app():
     server_name = os.getenv("SERVER_NAME")
     if server_name:
         app.config['SERVER_NAME'] = server_name
+        app.config['SESSION_COOKIE_DOMAIN'] = '.dom.cnt.br'
     
     return app
-
+    
 if __name__ == '__main__':
     # Development
     # Initialize SQLite database
@@ -47,14 +48,18 @@ if __name__ == '__main__':
     # app = create_app()
     # app.run(debug=True, host=os.getenv("LOCAL_IP"), port=3000)
 
-    # # Production    
-    port = os.getenv("PORT")
-    threads = os.getenv("WAITRESS_THREADS", "4")
+    # # # Production    
+    # port = os.getenv("PORT")
+    # threads = os.getenv("WAITRESS_THREADS", "4")
     
-    # Create the Flask application
-    application = create_app()
+    # # Create the Flask application
+    # application = create_app()
     
-    # Run with waitress
-    print(f"Starting waitress server on port {port} with {threads} threads")
-    serve(application, host='0.0.0.0', port=int(port), threads=int(threads))
-    print("Ending server connection.")
+    # # Run with waitress
+    # print(f"Starting waitress server on port {port} with {threads} threads")
+    # serve(application, host='0.0.0.0', port=int(port), threads=int(threads))
+    # print("Ending server connection.")
+    
+    # Render
+    app = create_app()
+    app.run(debug=False)
