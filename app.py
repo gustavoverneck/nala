@@ -4,7 +4,6 @@ from src.db import get_database_connection, initialize_database, add_user_to_use
 from src.user import User
 from dotenv import load_dotenv
 import os
-from waitress import serve
 
 def create_app():
     app = Flask(__name__)
